@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <title>Sesión III</title>
@@ -16,18 +16,29 @@
 
 <body>
     <div class="container">
+        <nav>
+            <div class="nav-wrapper">
+                <a href="https://www.autonoma.edu.co" class="brand-logo right">UAM</a>
+                <ul id="nav-mobile" class="left hide-on-med-and-down">
+                    <li><a href="sass.html">Sass</a></li>
+                    <li><a href="badges.html">Components</a></li>
+                    <li><a href="collapsible.html">JavaScript</a></li>
+                </ul>
+            </div>
+        </nav>
+        <br>
         <!-- GRID -->
         <div class="row">
             <!-- El ancho predefinido de la columna es 12|_________| -->
             <!-- |___|___|___| El ancho predefinido se divide en 3 y cada columna tomaría el valor de 4-->
-            <div class="col s6">
+            <div class="input-field col s6">
                 <input type="text" name="user_name" id="user_name">
                 <label for="user_name">Nombre</label>
             </div>
-            <div class="col s3">
+            <div class="input-field col s3">
                 <input type="text" name="lastname_name" id="lastname_name" placeholder="Apellido paterno">
             </div>
-            <div class="col s3">
+            <div class="input-field col s3">
                 <input type="text" name="lastname_name1" id="lastname_name1" placeholder="Apellido materno">
             </div>
         </div>
@@ -51,9 +62,45 @@
                   </label>
             </div>
         </div>
+
+        <!-- GRID -->
+        <div class="row">
+            <div class="input-field col s2">
+                <label>Tipo de documento</label>
+            </div>
+
+            <div class="input-field col s5">
+                <select class="browser-default">
+                    <option value="" disabled selected>Selecciona una opción</option>
+                    <option value="1">C.C.</option>
+                    <option value="2">C.E.</option>
+                    <option value="3">Pasaporte</option>
+                    <option value="4">Libreta militar</option>
+                    <option value="5">NUIP</option>
+                </select>
+            </div>
+
+            <div class="input-field col s5">
+                <input type="number" name="user_id" id="user_id" class="validate">
+                <label for="user_id">Número de documento</label>
+            </div>
+        </div>
+
+        <!-- GRID -->
+        <div class="row">
+            <label>
+                <input type="checkbox" class="filled-in" checked="checked" />
+                <span>Acepto los términos y condiciones del sitio</span>
+              </label>
+        </div>
+        <!-- Button -->
+        <div>
+            <button class="btn waves-effect waves-light" type="submit" name="action">Enviar
+            <i class="material-icons right">send</i>
+      </button>
+        </div>
     </div>
-    <!--JavaScript at end of body for optimized loading-->
-    <script type="text/javascript" src="js/materialize.min.js"></script>
+
 </body>
 
 </html>
