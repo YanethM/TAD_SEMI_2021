@@ -18,3 +18,9 @@ let nombreAsignatura = "Estructuras de datos I";
 nombreAsignatura = "TAD I";
 /* Mostrar mensaje en página */
 document.write("Ha iniciado sesión como " + studentName + "<br>" + "A la clase de " + nombreAsignatura);
+
+/* Imprimir en la página, por secciones */
+document.getElementById("msn").innerHTML = "BIENVENIDO AL CURSO";
+document.getElementById("msn1").innerHTML = "Ha iniciado sesión como " + studentName;
+document.getElementById("msn2").innerHTML = "A la clase de " + nombreAsignatura;
+document.getElementById("msn3").innerHTML = "Cerrando sesión"
