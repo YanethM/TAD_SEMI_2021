@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row center">
+            <label>CAPTURA DE VALORES DE CAMPOS INPUT</label>
+        </div>
+
+        <!-- Primer fila form -->
+        <div class="row">
+            <div class="input-field col s6">
+                <input type="text" id="user_name" name="user_name">
+                <label for="user_name">Nombre</label>
+            </div>
+            <!-- ////////////////////////////// -->
+            <div class="input-field  col s6">
+                <input type="text" id="user_lastname" name="user_lastname">
+                <label for="user_lastname">Apellido</label>
+            </div>
+        </div>
+
+        <div class="row center">
+            <button type="submit" onclick="capturaNombreUsuario()">Enviar</button>
+        </div>
+
+        <div class="row center">
+            <output id="ver"></output>
+            <output id="ver1"></output>
+        </div>
+    </div>
+
+    <!-- Archivo js dentro de carpeta -->
+    <script src="js/iteraciones.js"></script>
+    <script src="js/capturaValorInput.js"></script>
+    <!-- Archivo js a nivel del index.html -->
+    <!-- <script src="repaso.js"></script> -->
+</body>
+
+</html>
