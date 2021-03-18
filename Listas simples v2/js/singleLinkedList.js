@@ -14,6 +14,35 @@ function funcionEstandar() {
 } */
 
 
+function cargueImagenes(eventoSeleccionar) {
+    let files = eventoSeleccionar.target.files;
+    for (let i = 0, f; f = files[i]; i++) {
+        /* Cargue de sólo imagenes */
+        if (!f.type.match('image.*')) {
+            continue;
+        }
+        /* Capturar información de la imagen: tipo, nombre, tamaño */
+        let infoImagen = new FileReader();
+        infoImagen.onload = (function(imagenSeleccionada) {
+            return function(imagen) {
+                /* Crear etiqueta HTML en el DOM */
+                let span = document.createElement('span');
+                /* Escribimos en la etiqueta span: cargamos la imagen */
+                span.innerHTML = ['<img class ="thumb" width ="100px" heigth="100px" src= " ',
+                    imagen.target.result, ' "title=" ', escape(imagenSeleccionada.name),
+                    ' "/> '
+                ].join('');
+                document.getElementById("list").insertBefore(span, null);
+            };
+        })(f);
+        /* Función de la API FileReader
+        Hace la lectura del contenido de un objeto Blob
+        Trabaja con el atributo result que devuelve los datos del fichero, en este caso la imagen seleccionada */
+        infoImagen.readAsDataURL(f);
+    }
+}
+document.getElementById('files').addEventListener('change', cargueImagenes, false);
+
 class NodeClass {
 
     constructor(valor) {

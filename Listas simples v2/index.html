@@ -52,9 +52,21 @@
                 <!-- fila 3 -->
                 <tr>
                     <td>
-                        <!--  -->
+                        <!-- Crear botón para el cargue de multiples imagenes -->
+                        <div class="file-field input-field">
+                            <div class="btn">
+                                <span>Cargar imgs</span>
+                                <input type="file" name="files[]" id="files" multiple>
+                            </div>
+                            <!-- Muestra el nombre de las imagenes seleccionadas -->
+                            <div class="file-path-wrapper">
+                                <input type="text" class="file-path validate">
+                            </div>
+                        </div>
                     </td>
-                    <td></td>
+                    <td>
+                        <output id="list"></output>
+                    </td>
                 </tr>
                 <!-- fila 4 -->
                 <tr>
