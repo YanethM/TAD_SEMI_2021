@@ -70,12 +70,85 @@
                 </tr>
                 <!-- fila 4 -->
                 <tr>
-                    <td></td>
-                    <td></td>
+                    <td>
+                        <!-- campo input:file -->
+                        <div class="file-field input-field">
+                            <div class="btn">
+                                <span>Cargar txt</span>
+                                <input type="file" id="myInput">
+                            </div>
+                            <div class="file-path-wrapper">
+                                <input class="file-path validate" type="text">
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <!-- Ver contenido del txt -->
+                        <label>Contenido del archivo:</label>
+                        <output id="ver"></output>
+                    </td>
                 </tr>
             </tbody>
         </table>
+        <!-- Sección del botón -->
+        <div class="section">
+            <div class="row center">
+                <div class="col s12">
+                    <button class="btn waves-effect waves-lght btn-large blue">Crear lista</button>
+                </div>
+            </div>
+        </div>
 
+        <!-- Lista desplegable -->
+        <div class="section">
+            <div class="row">
+                <div class="col s8">
+                    <select class="browser-default" name="functionSelected" id="functionSelected" onchange="showSelected()">
+                        <option value="" disabled selected>Seleccione una opción</option>
+                        <option value="1">Añadir nodo</option>
+                        <option value="2">Eliminar nodo</option>
+                        <option value="3">Consultar valor de nodo</option>
+                        <option value="4">Eliminar nodo en determinada posición</option>
+                        <option value="5">Modificar valor de un nodo determinado</option>
+                        <option value="6">Añadir nodo en determinada posición</option>
+                        <option value="7">Invertir orden de la lista</option>
+                    </select>
+                </div>
+                <div class="col s4">
+                    <p>
+                        <label>
+                            <input type="checkbox" name="" id="">
+                            <span>Al inicio de la lista</span>
+                        </label>
+                    </p>
+
+                    <p>
+                        <label>
+                            <input type="checkbox" name="" id="">
+                            <span>Al final de la lista</span>
+                        </label>
+                    </p>
+                </div>
+            </div>
+            <div class="row center">
+                <!-- Parametros métodos listas simples -->
+                <div class="col s8">
+                    <input type="text" name="valorN" id="valorN"> <label for="valorN">Valor nodo</label>
+                </div>
+                <div class="col s4">
+                    <input type="number" name="posicionN" id="posicionN"> <label for="posicionN">Posición nodo</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección de aceptar y mostrar lista resultante -->
+        <div class="section">
+            <div class="row center">
+                <div class="col s12">
+                    <button class="btn waves-effect waves-lght btn-large blue">Ver lista resultante</button>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 <script src="js/singleLinkedList.js"></script>

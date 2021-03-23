@@ -13,7 +13,6 @@ function funcionEstandar() {
     document.getElementById("nodosIngresados").innerHTML = valoresNodos;
 } */
 
-
 function cargueImagenes(eventoSeleccionar) {
     let files = eventoSeleccionar.target.files;
     for (let i = 0, f; f = files[i]; i++) {
@@ -21,9 +20,9 @@ function cargueImagenes(eventoSeleccionar) {
         if (!f.type.match('image.*')) {
             continue;
         }
+        let cargueImagenes = new FileReader;
         /* Capturar información de la imagen: tipo, nombre, tamaño */
-        let infoImagen = new FileReader();
-        infoImagen.onload = (function(imagenSeleccionada) {
+        cargueImagenes.onload = (function(imagenSeleccionada) {
             return function(imagen) {
                 /* Crear etiqueta HTML en el DOM */
                 let span = document.createElement('span');
@@ -38,10 +37,36 @@ function cargueImagenes(eventoSeleccionar) {
         /* Función de la API FileReader
         Hace la lectura del contenido de un objeto Blob
         Trabaja con el atributo result que devuelve los datos del fichero, en este caso la imagen seleccionada */
-        infoImagen.readAsDataURL(f);
+        cargueImagenes.readAsDataURL(f);
     }
 }
 document.getElementById('files').addEventListener('change', cargueImagenes, false);
+
+/* Cargue de archivo txt */
+let input = myInput;
+let infoArchivo = new FileReader;
+input.addEventListener('change', onChange);
+
+function onChange(event) {
+    /* event es el evento clic de selección */
+    /* targer es el tipo de archivo seleccionado */
+    /* files[0] sólo permite el cargue de un archivo */
+    let archivo = event.target.files[0];
+    /* readAsText se utiliza para leer el contenido de ls archivos */
+    infoArchivo.readAsText(archivo);
+    /* Permite ejecutar la función onload despues de cargar el archivo */
+    infoArchivo.onload = onLoad;
+}
+
+/* Lectura del contenido del archivo */
+function onLoad() {
+    let contenidoTxt = infoArchivo.result;
+    let lecturaLineaPorLina = contenidoTxt.split('\n');
+    let contenido = "";
+    contenido += lecturaLineaPorLina;
+    document.getElementById("ver").innerHTML = contenido;
+}
+
 
 class NodeClass {
 
@@ -184,6 +209,11 @@ class listasSimples {
         return null;
     }
 
+    /* Implementar método reverse (invertir nodos de la lista) */
+    /* Implementar función para llamar método según selección del user en la lista desplagable */
+    /* Crear la lista simple a partir de los valores ingresados por el usuario, 
+    en la opción por default y del campo input */
+
     imprimirArrayList() {
         let arregloNodos = [];
         let nodoVisitado = this.head;
@@ -214,4 +244,5 @@ console.log(instClass);
 instClass.insertarNodoPorPosicion("Nuevo nodo", 0);
 instClass.removerNodoPorValor(3);
 
+instClass.imprimirArrayList();
 instClass.imprimirArrayList();
