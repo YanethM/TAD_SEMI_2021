@@ -1,17 +1,8 @@
 const capturaValorInputAnonima = function() {
     let valoresNodos = document.getElementById("nodos").value;
     document.getElementById("nodosIngresados").innerHTML = valoresNodos;
+    /* Dividir o separar cada valor por "," split() */
 };
-
-/* const capturaValorInputFlecha = () => {
-    let valoresNodos = document.getElementById("nodos").value;
-    document.getElementById("nodosIngresados").innerHTML = valoresNodos;
-};
-
-function funcionEstandar() {
-    let valoresNodos = document.getElementById("nodos").value;
-    document.getElementById("nodosIngresados").innerHTML = valoresNodos;
-} */
 
 function cargueImagenes(eventoSeleccionar) {
     let files = eventoSeleccionar.target.files;
@@ -66,7 +57,6 @@ function onLoad() {
     contenido += lecturaLineaPorLina;
     document.getElementById("ver").innerHTML = contenido;
 }
-
 
 class NodeClass {
 
@@ -208,6 +198,9 @@ class listasSimples {
         }
         return null;
     }
+    invertirOrdenLista() {
+        console.log("Implementar método")
+    }
 
     /* Implementar método reverse (invertir nodos de la lista) */
     /* Implementar función para llamar método según selección del user en la lista desplagable */
@@ -233,16 +226,41 @@ instClass.añadirNodoI(1);
 instClass.añadirNodoI(7);
 instClass.añadirNodoI(8);
 instClass.añadirNodoI(9);
-
-console.log(instClass);
-/* instClass.eliminarNodoI();
-instClass.eliminarNodoF(); 
-instClass.modificarValorNodo(1, "Dos");*/
-instClass.removerNodoPorPosicion(1); /* Elimina nodo con valor 3 */
-console.log(instClass);
-
-instClass.insertarNodoPorPosicion("Nuevo nodo", 0);
-instClass.removerNodoPorValor(3);
+/* Añadir nodo al final de los valores ingresados en el campo input plit(",")
+    Añadir nodo al final que contenga el nombre de las imagenes seleccionadas
+    Añadir nodo al final que muestre el contenido del archivo txt seleccionado, donde cada linea 
+    es un valor de nodo diferente split("\n")*/
 
 instClass.imprimirArrayList();
+
+/* validar el algoritmo de selección de lista desplegable y checkbox */
+let seleccion = document.getElementById("functionSelected").value;
+
+if (seleccion === "1") {
+    instClass.añadirNodoI();
+    instClass.añadirNodoF();
+    instClass.imprimirArrayList();
+} else if (seleccion === "2") {
+    instClass.eliminarNodoI();
+    instClass.eliminarNodoF();
+    instClass.imprimirArrayList();
+} else if (seleccion === "3") {
+    instClass.getPosicionPuntero();
+    instClass.imprimirArrayList();
+} else if (seleccion === "4") {
+    instClass.removerNodoPorPosicion();
+    instClass.imprimirArrayList();
+} else if (seleccion === "5") {
+    instClass.removerNodoPorValor();
+    instClass.imprimirArrayList();
+} else if (seleccion === "6") {
+    instClass.modificarValorNodo();
+    instClass.imprimirArrayList();
+} else if (seleccion === "7") {
+    instClass.insertarNodoPorPosicion();
+    instClass.imprimirArrayList();
+} else if (seleccion === "7") {
+    instClass.invertirOrdenLista();
+    instClass.imprimirArrayList();
+}
 instClass.imprimirArrayList();
